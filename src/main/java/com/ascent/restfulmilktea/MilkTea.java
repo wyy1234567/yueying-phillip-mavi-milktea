@@ -1,5 +1,6 @@
 package com.ascent.restfulmilktea;
 
+
 import java.util.ArrayList;
 
 public class MilkTea {
@@ -7,9 +8,9 @@ public class MilkTea {
     private String name;
     private String price;
     private ArrayList<String> ingredients;
-    private ArrayList<Toppings> toppings;
+    private ArrayList<String> toppings;
 
-    private Size size;
+    private String size;
     private boolean caffeinated;
 
     public boolean isCaffeinated() {
@@ -62,22 +63,18 @@ public class MilkTea {
     }
 
     public ArrayList<String> getToppings() {
-        ArrayList<String> stringToppings = new ArrayList<>();
-        for (Toppings topping : toppings) {
-            stringToppings.add(topping.toString());
-        }
-        return stringToppings;
+        return toppings;
     }
 
-    public void setToppings(ArrayList<Toppings> toppings) {
+    public void setToppings(ArrayList<String> toppings) {
         this.toppings = toppings;
     }
 
     public String getSize() {
-        return size.toString();
+        return size;
     }
 
-    public void setSize(Size size) {
+    public void setSize(String size) {
         this.size = size;
     }
 
