@@ -60,8 +60,8 @@ public class MilkTeaTest {
     @Test
     @DisplayName("MilkTea can set its toppings")
     void shouldSetItsToppings() {
-        milkTea.setToppings(new ArrayList<Toppings>(Arrays.asList(Toppings.BOBA,
-                Toppings.CHEESE)));
+        milkTea.setToppings(new ArrayList<String>(Arrays.asList("Boba",
+                "Cheese")));
         assertEquals(new ArrayList<String>(Arrays.asList("Boba",
                 "Cheese")), milkTea.getToppings());
     }
@@ -76,7 +76,7 @@ public class MilkTeaTest {
     @Test
     @DisplayName("MilkTea can set its size")
     void shouldSetItsSize() {
-        milkTea.setSize(Size.MEDIUM);
+        milkTea.setSize("Medium");
         assertEquals("Medium", milkTea.getSize());
     }
 }

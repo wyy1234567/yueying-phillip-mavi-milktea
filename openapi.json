@@ -144,8 +144,8 @@
         }
       },
       "patch": {
-        "summary": "Updates a milkTea in the store with form data",
-        "operationId": "updateMilkTeaWithForm",
+        "summary": "Updates a milkTea in the store",
+        "operationId": "updateMilkTea",
         "parameters": [
           {
             "name": "milkTeaId",
