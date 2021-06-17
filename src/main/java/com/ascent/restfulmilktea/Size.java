@@ -14,5 +14,4 @@ public enum Size {
     public String toString() {
         return this.name;
     }
-
 }

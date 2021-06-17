@@ -26,11 +26,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.hamcrest.Matchers.hasSize;
 
-import java.lang.reflect.Array;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.HashMap;
 
 @WebMvcTest
@@ -99,44 +96,18 @@ public class MilkTeaControllerTests {
                 .andExpect(jsonPath("name").value("Classic Milk Tea"));
     }
 
-    // PATCH TEST IN PROGRESS
-
     @Test
     @DisplayName("Patch /milkTea/{milkTeaId} should update a single milktea")
     void updateMilkTea_shouldUpdateMilkTea() throws Exception {
         MilkTea actual = new MilkTea("Classic Milk Tea", "$5.0");
         actual.setId(666L);
-//        String JSON = "{\"name\": \"testtesttest\", \"toppings\": [\"Boba\", " +
-//                "\"Jelly\"]}";
         String JSON = "{\"name\": \"testtesttest\"}";
         HashMap<String, Object> update = new HashMap<>();
         update.put("name", "testtesttest");
-//        update.put("toppings", new String[] {"Boba", "Jelly"});
-
         when(milkTeaService.updateMilkTea(actual, update)).thenReturn(actual);
         mockMvc.perform(patch("/milkTea/666")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(JSON))
                 .andExpect(status().isOk());
-//                .andExpect(jsonPath("price").value("$5.5"));
     }
-
 }
-
-
-//// JUNK TO LOOK AT
-
-//    @RequestMapping(value ="/students/{id}", method = RequestMethod.PATCH)
-//    public void patchStudent(@PathVariable Long id, @RequestBody Map<String,
-//            Object> fields) throws Exception {
-//        Student student = retrieveStudent(id);
-//        fields.forEach((attribute, value) -> {
-//            Field field = ReflectionUtils.findField(Student.class,
-//                    attribute);
-//            if (field != null) {
-//                field.setAccessible(true);
-//                ReflectionUtils.setField(field, student, value);
-//            }
-//        });
-//        repository.save(student);
-//    }

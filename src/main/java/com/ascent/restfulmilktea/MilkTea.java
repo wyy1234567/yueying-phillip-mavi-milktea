@@ -77,5 +77,4 @@ public class MilkTea {
     public void setSize(String size) {
         this.size = size;
     }
-
 }

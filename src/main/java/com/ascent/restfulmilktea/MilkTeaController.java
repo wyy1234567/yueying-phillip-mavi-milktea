@@ -38,9 +38,7 @@ public class MilkTeaController {
     public @ResponseBody MilkTea updateMilkTea(@PathVariable Long id,
             @RequestBody Map<String,
                 Object> fields) {
-        // Finds milk tea by id to update
         MilkTea milkTea = milkTeaService.getMilkTeaById(id);
-        // method patches milk tea using reflection
         return milkTeaService.updateMilkTea(milkTea, fields);
     }
 }

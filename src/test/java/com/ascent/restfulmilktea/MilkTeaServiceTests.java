@@ -2,7 +2,6 @@ package com.ascent.restfulmilktea;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -62,11 +61,4 @@ public class MilkTeaServiceTests {
         milkTeaService.updateMilkTea(hongKong, updatePayload);
         assertEquals("3:15PM Tea", hongKong.getName());
     }
-
-//    @Test
-//    void getByName() {
-//        MilkTea actual = milkTeaList.get(5);
-//        assertEquals(actual, milkTeaService.getByName(actual.getName()));
-//    }
-
 }

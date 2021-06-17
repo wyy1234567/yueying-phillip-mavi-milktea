@@ -9,5 +9,4 @@ public class ResTfulMilkTeaApplication {
     public static void main(String[] args) {
         SpringApplication.run(ResTfulMilkTeaApplication.class, args);
     }
-
 }

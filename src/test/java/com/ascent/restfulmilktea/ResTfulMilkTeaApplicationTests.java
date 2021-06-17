@@ -9,10 +9,4 @@ class ResTfulMilkTeaApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }
-
-
-/// uh oh
-/// the meeting ended right? it's not just me?
-/// help i'm all alone
